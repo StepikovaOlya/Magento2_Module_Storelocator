@@ -1,0 +1,16 @@
+{
+    "stepikova_storelocator": {
+        "column": {
+            "store_id": true,
+            "store_name": true,
+            "store_description": true,
+            "store_image": true,
+            "store_schedule": true,
+            "store_latitude": true,
+            "store_longitude": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

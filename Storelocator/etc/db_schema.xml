@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="stepikova_storelocator" resource="default" engine="innodb" comment="Store Locator Table">
+        <column xsi:type="smallint" name="store_id" padding="5" unsigned="true" nullable="false" identity="true"
+                comment="Store ID"/>
+        <column xsi:type="varchar" name="store_name" nullable="true" length="64" comment="Store Name"/>
+        <column xsi:type="mediumtext" name="store_description" nullable="true" comment="Store Description"/>
+        <column xsi:type="varchar" name="store_image" nullable="false" length="64" default="image"
+                comment="Store Image"/>
+        <column xsi:type="mediumtext" name="store_schedule" nullable="true" comment="Store Schedule"/>
+        <column xsi:type="double" name="store_latitude" nullable="false" comment="Store Latitude"/>
+        <column xsi:type="double" name="store_longitude" nullable="false" comment="Store Longitude"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="store_id"/>
+        </constraint>
+    </table>
+</schema>
