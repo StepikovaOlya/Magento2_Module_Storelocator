@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">stores_listing.stores_listing_data_source</item>
+        </item>
+    </argument>
+    <settings>
+        <spinner>stores_columns</spinner>
+        <deps>
+            <dep>stores_listing.stores_listing_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="stores_listing_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <storageConfig>
+                <param name="indexField" xsi:type="string">store_id</param>
+            </storageConfig>
+            <updateUrl path="mui/index/render"/>
+        </settings>
+        <aclResource>Stepikova_Storelocator::storelist</aclResource>
+        <dataProvider class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider" name="stores_listing_data_source">
+            <settings>
+                <requestFieldName>store_id</requestFieldName>
+                <primaryFieldName>store_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <settings>
+            <sticky>true</sticky>
+        </settings>
+        <bookmark name="bookmarks"/>
+        <columnsControls name="columns_controls"/>
+        <filterSearch name="fulltext"/>
+        <filters name="listing_filters"/>
+        <exportButton name="export_button"/>
+        <massaction name="listing_massaction">
+            <action name="delete">
+                <settings>
+                    <confirm>
+                        <message translate="true">Are you sure you want to delete the selected stores?</message>
+                        <title translate="true">Delete stores</title>
+                    </confirm>
+                    <url path="storelocator/stores/delete"/>
+                    <type>delete</type>
+                    <label translate="true">Delete stores</label>
+                </settings>
+            </action>
+        </massaction>
+        <paging name="listing_paging"/>
+    </listingToolbar>
+    <columns name="stores_columns">
+        <settings>
+            <editorConfig>
+                <param name="enabled" xsi:type="boolean">false</param>
+            </editorConfig>
+        </settings>
+        <selectionsColumn name="ids" sortOrder="0">
+            <settings>
+                <indexField>store_id</indexField>
+            </settings>
+        </selectionsColumn>
+        <column name="store_id" sortOrder="10">
+            <settings>
+                <filter>textRange</filter>
+                <sorting>asc</sorting>
+                <label translate="true">Store ID</label>
+            </settings>
+        </column>
+        <column name="store_name" sortOrder="20">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Store Name</label>
+            </settings>
+        </column>
+        <column name="store_image" sortOrder="30">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Store Image</label>
+            </settings>
+        </column>
+        <column name="store_description" sortOrder="40">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Store Description</label>
+            </settings>
+        </column>
+        <column name="store_schedule" sortOrder="50">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Store Schedule</label>
+            </settings>
+        </column>
+        <column name="store_latitude" sortOrder="60">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Store Latitude</label>
+            </settings>
+        </column>
+        <column name="store_longitude" sortOrder="70">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Store Longitude</label>
+            </settings>
+        </column>
+    </columns>
+</listing>

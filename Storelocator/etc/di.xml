@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Stepikova\Storelocator\Api\Data\StoreInterface"
+                type="Stepikova\Storelocator\Model\StoreData"
+    />
+    <preference for="Stepikova\Storelocator\Api\Data\StoreSearchResultInterface"
+                type="Stepikova\Storelocator\Model\StoreSearchResult"
+    />
+    <preference for="Stepikova\Storelocator\Api\StoreRepositoryInterface"
+                type="Stepikova\Storelocator\Model\StoreRepository"
+    />
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="stepikova_storelocator_import_sample_data" xsi:type="object">
+                    \Stepikova\Storelocator\Console\Command\ImportSampleData
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="stores_listing_data_source" xsi:type="string">Stepikova\Storelocator\Model\ResourceModel\Store\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Stepikova\Storelocator\Model\ResourceModel\Store\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult"
+    >
+        <arguments>
+            <argument name="mainTable" xsi:type="string">stepikova_storelocator</argument>
+            <argument name="resourceModel" xsi:type="string">Stepikova\Storelocator\Model\ResourceModel\Store</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\EntityManager\MetadataPool">
+        <arguments>
+            <argument name="metadata" xsi:type="array">
+                <item name="Stepikova\Storelocator\Api\Data\StoreInterface" xsi:type="array">
+                    <item name="entityTableName" xsi:type="string">stepikova_storelocator</item>
+                    <item name="identifierField" xsi:type="string">store_id</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+</config>

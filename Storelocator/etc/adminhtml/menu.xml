@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Stepikova_Storelocator::elements"
+             title="Storelocator" module="Stepikova_Storelocator"
+             parent="Magento_Backend::stores"
+             sortOrder="10"
+             resource="Stepikova_Storelocator::elements"/>
+        <add id="Stepikova_Storelocator::storelist"
+             title="Store List"
+             module="Stepikova_Storelocator"
+             parent="Stepikova_Storelocator::elements"
+             sortOrder="10"
+             action="stores/stores"
+             resource="Stepikova_Storelocator::stores"/>
+    </menu>
+</config>
