@@ -7,6 +7,13 @@
         </item>
     </argument>
     <settings>
+        <buttons>
+            <button name="add">
+                <url path="*/*/new"/>
+                <class>primary</class>
+                <label translate="true">Add New Store</label>
+            </button>
+        </buttons>
         <spinner>stores_columns</spinner>
         <deps>
             <dep>stores_listing.stores_listing_data_source</dep>
@@ -46,6 +53,16 @@
                     <url path="storelocator/stores/delete"/>
                     <type>delete</type>
                     <label translate="true">Delete stores</label>
+                </settings>
+            </action>
+            <action name="edit">
+                <settings>
+                    <callback>
+                        <target>editSelected</target>
+                        <provider>store_listing.store_listing.store_columns_editor</provider>
+                    </callback>
+                    <type>edit</type>
+                    <label translate="true">Edit</label>
                 </settings>
             </action>
         </massaction>

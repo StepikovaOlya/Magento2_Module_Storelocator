@@ -23,6 +23,7 @@
         <arguments>
             <argument name="collections" xsi:type="array">
                 <item name="stores_listing_data_source" xsi:type="string">Stepikova\Storelocator\Model\ResourceModel\Store\Collection</item>
+                <item name="stores_form_data_source" xsi:type="string">Stepikova\Storelocator\Model\ResourceModel\Store\Collection</item>
             </argument>
         </arguments>
     </type>
