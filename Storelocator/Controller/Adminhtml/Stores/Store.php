@@ -6,7 +6,7 @@ namespace Stepikova\Storelocator\Controller\Adminhtml\Stores;
 
 use Magento\Framework\Controller\ResultFactory;
 
-class Index extends \Magento\Backend\App\Action
+abstract class Store extends \Magento\Backend\App\Action
 {
     /**
      * Authorization level of a basic admin session
@@ -34,10 +34,15 @@ class Index extends \Magento\Backend\App\Action
 
     /**
      * Init page
-     * @inheritDoc
+     *
+     * @param \Magento\Backend\Model\View\Result\Page $resultPage
+     * @return \Magento\Backend\Model\View\Result\Page
      */
-    public function execute()
+    protected function initPage($resultPage)
     {
-        return $this->resultFactory->create(ResultFactory::TYPE_PAGE);
+        $resultPage->setActiveMenu('Magento_Cms::storelist')
+            ->addBreadcrumb(__('Store'), __('Store'))
+            ->addBreadcrumb(__('Store List'), __('Store List'));
+        return $resultPage;
     }
 }
