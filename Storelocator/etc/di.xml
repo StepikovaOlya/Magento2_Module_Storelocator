@@ -2,7 +2,7 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <preference for="Stepikova\Storelocator\Api\Data\StoreInterface"
-                type="Stepikova\Storelocator\Model\StoreData"
+                type="Stepikova\Storelocator\Model\Store"
     />
     <preference for="Stepikova\Storelocator\Api\Data\StoreSearchResultInterface"
                 type="Stepikova\Storelocator\Model\StoreSearchResult"
@@ -22,12 +22,12 @@
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">
-                <item name="stores_listing_data_source" xsi:type="string">Stepikova\Storelocator\Model\ResourceModel\Store\Collection</item>
-                <item name="stores_form_data_source" xsi:type="string">Stepikova\Storelocator\Model\ResourceModel\Store\Collection</item>
+                <item name="stores_listing_data_source" xsi:type="string">Stepikova\Storelocator\Model\ResourceModel\Store\CollectionGrid</item>
+                <item name="stores_form_data_source" xsi:type="string">Stepikova\Storelocator\Model\ResourceModel\Store\CollectionGrid</item>
             </argument>
         </arguments>
     </type>
-    <virtualType name="Stepikova\Storelocator\Model\ResourceModel\Store\Collection"
+    <virtualType name="Stepikova\Storelocator\Model\ResourceModel\Store\CollectionGrid"
                  type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult"
     >
         <arguments>

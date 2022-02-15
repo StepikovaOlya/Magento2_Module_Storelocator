@@ -7,4 +7,18 @@
             <resource ref="anonymous"/>
         </resources>
     </route>
+    <route url="/V1/store/store-api" method="POST">
+        <service class="\Stepikova\Storelocator\Api\StoreRepositoryInterface"
+                 method="save"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/store/store-api" method="PUT">
+        <service class="\Stepikova\Storelocator\Api\StoreRepositoryInterface"
+                 method="save"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
 </routes>

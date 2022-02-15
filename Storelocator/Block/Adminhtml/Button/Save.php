@@ -16,7 +16,7 @@ class Save implements ButtonProviderInterface
                     'buttonAdapter' => [
                         'actions' => [
                             [
-                                'targetName' => 'store_form.store_form',
+                                'targetName' => 'stores_form.stores_form',
                                 'actionName' => 'save',
                                 'params' => [
                                     false

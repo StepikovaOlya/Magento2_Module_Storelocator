@@ -21,9 +21,9 @@ interface StoreInterface
     public const STORE_LONGITUDE = 'store_longitude';
 
     /**
-     * @return int
+     * @return int|null
      */
-    public function getStoreId(): int;
+    public function getStoreId(): ?int;
 
     /**
      * @param int $storeId
@@ -32,9 +32,9 @@ interface StoreInterface
     public function setStoreId(int $storeId): self;
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getStoreName(): string;
+    public function getStoreName(): ?string;
 
     /**
      * @param string $storeName
@@ -43,9 +43,9 @@ interface StoreInterface
     public function setStoreName(string $storeName): self;
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getStoreDescription(): string;
+    public function getStoreDescription(): ?string;
 
     /**
      * @param string $storeDescription
@@ -54,9 +54,9 @@ interface StoreInterface
     public function setStoreDescription(string $storeDescription): self;
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getStoreImage(): string;
+    public function getStoreImage(): ?string;
 
     /**
      * @param string $storeImage
@@ -65,9 +65,9 @@ interface StoreInterface
     public function setStoreImage(string $storeImage): self;
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getStoreSchedule(): string;
+    public function getStoreSchedule(): ?string;
 
     /**
      * @param string $storeSchedule
@@ -76,9 +76,9 @@ interface StoreInterface
     public function setStoreSchedule(string $storeSchedule): self;
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getStoreLatitude(): string;
+    public function getStoreLatitude(): ?string;
 
     /**
      * @param string $storeLatitude
@@ -87,9 +87,9 @@ interface StoreInterface
     public function setStoreLatitude(string $storeLatitude): self;
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getStoreLongitude(): string;
+    public function getStoreLongitude(): ?string;
 
     /**
      * @param string $storeLongitude
