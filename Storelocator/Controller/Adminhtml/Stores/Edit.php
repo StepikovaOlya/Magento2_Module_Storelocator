@@ -3,11 +3,12 @@
 namespace Stepikova\Storelocator\Controller\Adminhtml\Stores;
 
 use Magento\Framework\App\Action\HttpGetActionInterface;
+use Stepikova\Storelocator\Controller\Adminhtml\Stores\Store as StoreAlias;
 
 /**
  * Edit Store item action.
  */
-class Edit extends \Stepikova\Storelocator\Controller\Adminhtml\Stores\Store implements HttpGetActionInterface
+class Edit extends StoreAlias implements HttpGetActionInterface
 {
     /**
      * @var \Magento\Framework\View\Result\PageFactory

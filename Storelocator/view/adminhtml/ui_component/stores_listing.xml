@@ -59,7 +59,7 @@
                 <settings>
                     <callback>
                         <target>editSelected</target>
-                        <provider>store_listing.store_listing.store_columns_editor</provider>
+                        <provider>stores_listing.stores_listing.stores_columns_editor</provider>
                     </callback>
                     <type>edit</type>
                     <label translate="true">Edit</label>
@@ -70,9 +70,16 @@
     </listingToolbar>
     <columns name="stores_columns">
         <settings>
-            <editorConfig>
-                <param name="enabled" xsi:type="boolean">false</param>
-            </editorConfig>
+            <childDefaults>
+                <param name="fieldAction" xsi:type="array">
+                    <item name="provider" xsi:type="string">stores_listing.stores_listing.stores_columns_editor</item>
+                    <item name="target" xsi:type="string">startEdit</item>
+                    <item name="params" xsi:type="array">
+                        <item name="0" xsi:type="string">${ $.$data.rowIndex }</item>
+                        <item name="1" xsi:type="boolean">true</item>
+                    </item>
+                </param>
+            </childDefaults>
         </settings>
         <selectionsColumn name="ids" sortOrder="0">
             <settings>
@@ -122,5 +129,12 @@
                 <label translate="true">Store Longitude</label>
             </settings>
         </column>
+        <actionsColumn name="actions" class="Stepikova\Storelocator\Ui\Component\Listing\Column\Actions">
+            <settings>
+                <indexField>store_id</indexField>
+                <resizeEnabled>false</resizeEnabled>
+                <resizeDefaultWidth>107</resizeDefaultWidth>
+            </settings>
+        </actionsColumn>
     </columns>
 </listing>

@@ -13,7 +13,7 @@
             <button name="delete" class="Stepikova\Storelocator\Block\Adminhtml\Button\Delete"/>
             <button name="back" class="Stepikova\Storelocator\Block\Adminhtml\Button\Back"/>
         </buttons>
-        <namespace>store_form</namespace>
+        <namespace>stores_form</namespace>
         <dataScope>data</dataScope>
         <deps>
             <dep>stores_form.stores_form_data_source</dep>
