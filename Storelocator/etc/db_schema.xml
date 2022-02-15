@@ -6,11 +6,11 @@
                 comment="Store ID"/>
         <column xsi:type="varchar" name="store_name" nullable="true" length="64" comment="Store Name"/>
         <column xsi:type="mediumtext" name="store_description" nullable="true" comment="Store Description"/>
-        <column xsi:type="varchar" name="store_image" nullable="false" length="64" default="image"
+        <column xsi:type="varchar" name="store_image" nullable="true" length="64" default="image"
                 comment="Store Image"/>
         <column xsi:type="mediumtext" name="store_schedule" nullable="true" comment="Store Schedule"/>
-        <column xsi:type="double" name="store_latitude" nullable="false" comment="Store Latitude"/>
-        <column xsi:type="double" name="store_longitude" nullable="false" comment="Store Longitude"/>
+        <column xsi:type="double" name="store_latitude" nullable="true" comment="Store Latitude"/>
+        <column xsi:type="double" name="store_longitude" nullable="true" comment="Store Longitude"/>
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="store_id"/>
         </constraint>
