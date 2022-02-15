@@ -3,11 +3,12 @@
 namespace Stepikova\Storelocator\Controller\Adminhtml\Stores;
 
 use Magento\Framework\App\Action\HttpGetActionInterface;
+use Stepikova\Storelocator\Controller\Adminhtml\Stores\Store as StoreAlias;
 
 /**
  * Create New Store action.
  */
-class NewAction extends \Stepikova\Storelocator\Controller\Adminhtml\Stores\Store implements HttpGetActionInterface
+class NewAction extends StoreAlias implements HttpGetActionInterface
 {
     /**
      * @var \Magento\Backend\Model\View\Result\ForwardFactory

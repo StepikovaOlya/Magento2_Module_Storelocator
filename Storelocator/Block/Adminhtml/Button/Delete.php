@@ -11,11 +11,11 @@ class Delete implements ButtonProviderInterface
     /**
      * @var Context
      */
-    private $context;
+    private Context $context;
     /**
      * @var UrlInterface
      */
-    private $url;
+    private UrlInterface $url;
 
     /**
      * Save constructor.

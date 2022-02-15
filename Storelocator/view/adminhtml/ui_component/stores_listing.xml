@@ -50,7 +50,7 @@
                         <message translate="true">Are you sure you want to delete the selected stores?</message>
                         <title translate="true">Delete stores</title>
                     </confirm>
-                    <url path="storelocator/stores/delete"/>
+                    <url path="stores/stores/massDelete"/>
                     <type>delete</type>
                     <label translate="true">Delete stores</label>
                 </settings>

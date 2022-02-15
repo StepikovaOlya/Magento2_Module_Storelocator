@@ -71,7 +71,7 @@ class StoreRepository implements \Stepikova\Storelocator\Api\StoreRepositoryInte
     /**
      * @inheritdoc
      */
-    public function get(int $storeId): StoreInterface
+    public function getById(int $storeId): StoreInterface
     {
         $storeItem = $this->storeDataFactory->create();
 
@@ -122,6 +122,6 @@ class StoreRepository implements \Stepikova\Storelocator\Api\StoreRepositoryInte
      */
     public function deleteById(int $storeId): bool
     {
-        return $this->delete($this->get($storeId));
+        return $this->delete($this->getById($storeId));
     }
 }

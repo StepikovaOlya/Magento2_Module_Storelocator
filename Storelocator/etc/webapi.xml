@@ -2,7 +2,8 @@
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
     <route url="/V1/store/store-api" method="GET">
-        <service class="\Stepikova\Storelocator\Api\StoreRepositoryInterface" method="getList"/>
+        <service class="\Stepikova\Storelocator\Api\StoreRepositoryInterface"
+                 method="getList"/>
         <resources>
             <resource ref="anonymous"/>
         </resources>
@@ -17,6 +18,13 @@
     <route url="/V1/store/store-api" method="PUT">
         <service class="\Stepikova\Storelocator\Api\StoreRepositoryInterface"
                  method="save"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/store/store-api/:store_id" method="DELETE">
+        <service class="\Stepikova\Storelocator\Api\StoreRepositoryInterface"
+                 method="deleteById"/>
         <resources>
             <resource ref="anonymous"/>
         </resources>

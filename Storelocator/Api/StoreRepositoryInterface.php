@@ -24,7 +24,7 @@ interface StoreRepositoryInterface
      * @param int $storeId
      * @return StoreInterface
      */
-    public function get(int $storeId): StoreInterface;
+    public function getById(int $storeId): StoreInterface;
 
     /**
      * Get list of stores
