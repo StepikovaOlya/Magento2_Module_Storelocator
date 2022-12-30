@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd"
+>
+    <body>
+        <referenceContainer name="product.info.main">
+            <block class="Stepikova\Custom\Block\Product\View\Base"
+                   name="product.info.base"
+                   template="Stepikova_Custom::product/view/base.phtml"
+                   before="-"
+            />
+        </referenceContainer>
+    </body>
+</page>

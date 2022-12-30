@@ -1,0 +1,13 @@
+<?php
+/**
+ * @var \Stepikova\Custom\Block\Product\View\Base $block
+ * @var \Magento\Framework\Escaper $escaper
+ */
+?>
+
+<div class="bg-container text-center font-medium">
+    <p><?= $escaper->escapeHtml(__('This is a custom block:')) ?></p>
+    <p><?= $escaper->escapeHtml(__('Product %1 is in stock', $block->getProductName())) ?></p>
+</div>
+
+
