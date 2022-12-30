@@ -1,0 +1,18 @@
+<?php
+
+declare(strict_types=1);
+
+use Stepikova\Custom\Block\Label;
+use Magento\Framework\Escaper;
+
+/** @var Label $block */
+/** @var Escaper $escaper */
+?>
+
+<?php if ($block->showLabel() && !!$block->getLabel()): ?>
+    <div class="bg-container-darker border shadow p-4 m-4">
+        <p><?= $escaper->escapeHtml(__('This is a Store Label from Block:')) ?></p>
+        <p><?= $escaper->escapeHtml(__($block->getLabel())) ?></p>
+    </div>
+<?php endif; ?>
+

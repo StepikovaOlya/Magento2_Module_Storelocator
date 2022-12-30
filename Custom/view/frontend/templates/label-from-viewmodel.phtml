@@ -1,0 +1,23 @@
+<?php
+
+declare(strict_types=1);
+
+use Magento\Framework\View\Element\Template;
+use Magento\Framework\Escaper;
+
+/** @var Stepikova\Custom\ViewModel\Label $viewModel */
+/** @var Template $block */
+/** @var Escaper $escaper */
+$viewModel = $block->getData('Label');
+?>
+
+<?php if ($viewModel->showLabel() && !!$viewModel->getLabel()): ?>
+    <div class="bg-container-darker border shadow p-4 m-4">
+        <p><?= $escaper->escapeHtml(__('This is a Store Label from ViewModel:')) ?></p>
+        <p><?= $escaper->escapeHtml(__($viewModel->getLabel())) ?></p>
+    </div>
+<?php endif; ?>
+
+
+
+
